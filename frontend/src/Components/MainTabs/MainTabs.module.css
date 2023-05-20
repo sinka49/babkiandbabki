@@ -1,0 +1,37 @@
+.tabsWrapper {
+  overflow-y: scroll;
+}
+
+.tabButton:not(:last-child) {
+  margin-right: 12px;
+}
+
+.tabsWrapper [class*='MuiTabs-root'] {
+  padding-left: 16px;
+  overflow-x: scroll;
+}
+
+.tabsWrapper [class*='MuiTabs-root'] div::-webkit-scrollbar {
+  display: none;
+}
+
+
+.tabsWrapper [class*='MuiTabs-root'] div {
+  overflow-x: scroll;
+}
+
+.tabsWrapper [class*='MuiTabPanel-root'] {
+  padding: 0 16px;
+}
+
+.content {
+  padding: 61vh 16px 0 16px;
+  margin-bottom: 56px;
+  text-align: start;
+}
+
+.contentTitle {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
