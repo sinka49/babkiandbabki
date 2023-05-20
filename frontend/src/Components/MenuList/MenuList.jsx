@@ -4,7 +4,12 @@ const MenuList = ({ menuItems }) => {
   return (
     <div className={s.menuList}>
       {menuItems.map((item) => (
-        <MenuItem img={item.img} price={item.price} title={item.title} />
+        <MenuItem
+          img={item.img}
+          price={item.price}
+          title={item.title}
+          key={menuItems.indexOf(item)}
+        />
       ))}
     </div>
   );

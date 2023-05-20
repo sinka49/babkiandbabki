@@ -1,0 +1,12 @@
+.mainContent {
+  padding: 62vh 16px 0 16px;
+  margin-bottom: 56px;
+  text-align: start;
+  /*overflow-y: scroll;*/
+}
+
+.contentTitle {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}

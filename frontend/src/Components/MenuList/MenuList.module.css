@@ -1,4 +1,5 @@
 .menuList {
+  padding: 0 16px;
   display: flex;
   flex-wrap: wrap;
   gap: 16px;

@@ -1,0 +1,41 @@
+.header {
+  max-width: 100%;
+  position: fixed;
+  top: 0;
+  padding: 32px 16px 0;
+  margin-bottom: 6px;
+  z-index: 100;
+}
+
+.headerTop {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+.headerButton {
+  font-weight: 500;
+}
+
+.headerButton svg {
+  margin-left: 10px;
+}
+
+.navigation {
+  display: flex;
+  overflow-x: scroll;
+  max-width: 100%;
+}
+
+.navigation::-webkit-scrollbar {
+  display: none;
+}
+
+.navButton {
+  padding: 10px 20px;
+  white-space: nowrap;
+}
+
+.navButton:not(:last-child) {
+  margin-right: 12px;
+}
