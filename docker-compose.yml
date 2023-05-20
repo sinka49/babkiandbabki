@@ -1,0 +1,57 @@
+version: '3.8'
+services:
+  backend:
+    env_file:
+      - backend/app/.env
+    build:
+      context: ./backend/
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./backend:/code
+    depends_on:
+      - postgres
+    ports:
+      - "127.0.0.1:8000:8000"
+    expose:
+      - 8000
+
+  postgres:
+    image: postgres:15.1
+    environment:
+      POSTGRES_DB: "babki"
+      POSTGRES_USER: "babki"
+      POSTGRES_PASSWORD: "babki"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - ../2. Init Database:/docker-entrypoint-initdb.d
+      - .:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+
+  frontend:
+    env_file:
+      - frontend/.env
+    build:
+      context: ./frontend/
+      dockerfile: ./Dockerfile
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    volumes:
+       - ./frontend:/usr/src/app/my-app
+       - /usr/src/app/my-app/node_modules
+
+  pgadmin:
+    image: dpage/pgadmin4:6.21
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "babki@mail.ru"
+      PGADMIN_DEFAULT_PASSWORD: "babki@mail.ru"
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+    volumes:
+      - ./pgadmin:/var/lib/pgadmin
+    ports:
+      - "5050:80"
+    restart: unless-stopped
+    depends_on:
+      - postgres
