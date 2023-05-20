@@ -1,5 +1,6 @@
 import uuid
 
+from pydantic.schema import List
 
 from .tunedModel import TunedModel
 

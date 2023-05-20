@@ -2,7 +2,7 @@ import uuid
 
 import sqlalchemy as sqlalchemy
 from sqlalchemy import Column, String
-from sqlalchemy.orm import declarative_base
+from sqlalchemy.orm import declarative_base, relationship
 from sqlalchemy.dialects.postgresql import UUID
 
 Base = declarative_base()
@@ -21,7 +21,11 @@ class Drink(Base):
     title = Column(String, nullable=False)
     is_active_constructor = Column(sqlalchemy.Boolean(),
                                    server_default=sqlalchemy.sql.expression.true(),
-                                   nullable=False )
+                                   nullable=False)
+    ingridients = relationship("Ingridient",
+                           secondary="drink_ingridients",
+                           back_populates="drinks")
+
 class Ingridient(Base):
     __tablename__ = "ingridients"
     ID = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
@@ -32,4 +36,4 @@ class Drink_Ingridient(Base):
     ID = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     Column('drink_id', sqlalchemy.ForeignKey(Drink.ID), primary_key=True),
     Column('ingridient_id', sqlalchemy.ForeignKey(Ingridient.ID), primary_key=True)
-
+    blurb = Column(String, nullable=False)
