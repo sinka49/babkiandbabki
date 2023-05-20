@@ -7,7 +7,7 @@ from sqlalchemy.dialects.postgresql import UUID
 
 Base = declarative_base()
 
-
+metadata = sqlalchemy.MetaData()
 class Category(Base):
     __tablename__ = "categories"
     ID = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
@@ -33,4 +33,3 @@ class Drink_Ingridient(Base):
     Column('drink_id', sqlalchemy.ForeignKey(Drink.ID), primary_key=True),
     Column('ingridient_id', sqlalchemy.ForeignKey(Ingridient.ID), primary_key=True)
 
-metadata = sqlalchemy.MetaData()

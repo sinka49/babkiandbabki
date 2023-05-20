@@ -8,9 +8,8 @@ from sqlalchemy.ext.asyncio import AsyncEngine
 
 from alembic import context
 
-from app.models import Base
-from app.models.drinks import Drink
-from app.models.ingridients import Ingridient
+from app.models.Base import Base, Ingridient, Drink, Category, Drink_Ingridient
+
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
