@@ -1,8 +1,7 @@
 import "./App.css";
-import Header from "./Components/Header/Header";
-import MainComponent from "./Components/Main/MainComponent";
 import { pink } from "@mui/material/colors";
 import { createTheme, ThemeProvider } from "@mui/material";
+import CoffeeCalc from "./Components/Content/CoffeeCalc/CoffeeCalc";
 
 const theme = createTheme({
   palette: {
@@ -16,8 +15,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
-        {/*<Header />*/}
-        <MainComponent theme={theme} />
+        <CoffeeCalc />
       </div>
     </ThemeProvider>
   );
