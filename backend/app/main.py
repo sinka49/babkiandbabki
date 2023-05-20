@@ -1,11 +1,10 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, APIRouter
 from datetime import datetime
 
-app = FastAPI()
+from .routers.categoryRouter import category_router
 
-@app.get("/day", tags=["Dates"])
-def get_day_of_week():
-    """
-    Get the current day of week
-    """
-    return datetime.now().strftime("%A")
+app = FastAPI()
+main_api_router = APIRouter()
+main_api_router.include_router(category_router, prefix="/categories", tags=["categories"])
+
+app.include_router(main_api_router)
