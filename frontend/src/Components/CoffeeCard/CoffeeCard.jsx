@@ -7,7 +7,7 @@ import Box from "@mui/material/Box";
 import { Link } from "react-router-dom";
 
 const CoffeeCard = () => {
-  const [value, setValue] = React.useState("one");
+  const [value, setValue] = React.useState("two");
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
