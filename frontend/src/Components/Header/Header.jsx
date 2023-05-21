@@ -1,7 +1,14 @@
 import s from "./Header.module.css";
 import { Link } from "react-router-dom";
 
-const optionsMock = ["Кофе", "Не кофе", "Еда", "Десерты", "Разное", "Говно"];
+const optionsMock = [
+  "Топ недели",
+  "Кофе",
+  "Не кофе",
+  "Уда",
+  "Десерты",
+  "Разное",
+];
 
 const Header = () => {
   return (
@@ -27,7 +34,7 @@ const Header = () => {
       </div>
       <nav className={s.navigation}>
         {optionsMock.map((item) => (
-          <Link to={item} key={optionsMock.indexOf(item)} className={s.navLink}>
+          <Link to="#" key={optionsMock.indexOf(item)} className={s.navLink}>
             <button className={s.navButton}>{item}</button>
           </Link>
         ))}

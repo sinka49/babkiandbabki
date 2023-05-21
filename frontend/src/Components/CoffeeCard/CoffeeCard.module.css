@@ -5,11 +5,12 @@
   right: 0;
   bottom: 0;
   background-color: #fff;
-  padding: 34px 16px 81px;
+  padding: 20px 16px 0;
 }
 
 .img {
-  margin-bottom: 28px;
+  margin-bottom: 10px;
+  height: 350px;
 }
 
 .title {
@@ -21,15 +22,15 @@
 .description {
   font-size: 16px;
   font-weight: 400;
-  margin-bottom: 24px;
+  margin-bottom: 10px;
 }
 
 .buttons {
   padding-top: 18px;
-  margin-bottom: 48px;
+  margin-bottom: 25px;
   display: flex;
-  justify-content: space-between;
-  gap: 18px;
+  justify-content: center;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
@@ -38,6 +39,7 @@
   justify-content: center;
   width: 45%;
   color: #000;
+  font-size: 18px;
 }
 
 .orderButton {
@@ -55,5 +57,27 @@
 .header {
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 14px;
+  margin-bottom: 5px;
+}
+
+.header svg {
+  width: 30px;
+  height: 30px;
+}
+
+.optionMenu {
+  position: fixed;
+  padding: 10px 16px 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(80, 77, 77, 0.68);
+  backdrop-filter: blur(6px);
+  height: 0;
+  transition: all .75s;
+  border-radius: 10px 10px 0 0;
+}
+
+.menuShowed {
+  height: 245px;
 }

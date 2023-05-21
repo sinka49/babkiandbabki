@@ -5,7 +5,7 @@ const MenuList = ({ menuItems }) => {
   return (
     <div className={s.menuList}>
       {menuItems.map((item) => (
-        <Link to={`item/${item.id}`} key={menuItems.indexOf(item)}>
+        <Link to={`item/${item.id}`} key={menuItems.indexOf(item)} className={s.menuItemLink}>
           <MenuItem img={item.img} price={item.price} title={item.title} />
         </Link>
       ))}

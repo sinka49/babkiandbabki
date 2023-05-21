@@ -1,16 +1,32 @@
 import s from "./CoffeeCard.module.css";
 import card from "../../assets/img/card.png";
 import * as React from "react";
+import { useState } from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import { Link } from "react-router-dom";
+import cn from "classnames";
 
 const CoffeeCard = () => {
   const [value, setValue] = React.useState("two");
+  const [showMenu, setShowMenu] = useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+  };
+
+  const optionsContent = (id) => {
+    switch (id) {
+      case 1:
+        return ["Овсяное", "Миндальное", "Кокосовое", "Банановое"];
+      case 2:
+        return ["Карамель", "Орех", "Ваниль", "Мята"];
+      case 3:
+        return ["Стандартная", "Погорячее"];
+      case 4:
+        return ["Сахар", "Подставка", "Приборы", "Без крышки"];
+    }
   };
 
   return (
@@ -53,10 +69,19 @@ const CoffeeCard = () => {
       </Box>
 
       <div className={s.buttons}>
-        <button className={s.optionButton}>Молоко</button>
-        <button className={s.optionButton}>Сироп</button>
-        <button className={s.optionButton}>Температура</button>
-        <button className={s.optionButton}>Кофе с собой</button>
+        <button className={s.optionButton} onClick={() => setShowMenu(1)}>
+          Молоко
+        </button>
+        <button className={s.optionButton} onClick={() => setShowMenu(2)}>
+          {" "}
+          Сироп{" "}
+        </button>
+        <button className={s.optionButton} onClick={() => setShowMenu(3)}>
+          Температура
+        </button>
+        <button className={s.optionButton} onClick={() => setShowMenu(4)}>
+          Кофе с собой
+        </button>
       </div>
 
       <div className={s.bottom}>
@@ -90,6 +115,23 @@ const CoffeeCard = () => {
           </svg>
           120 ₽
         </button>
+      </div>
+
+      <div
+        className={cn(s.optionMenu, showMenu ? s.menuShowed : "")}
+        onClick={() => setShowMenu(false)}
+      >
+        <div className={s.buttons}>
+          {optionsContent(showMenu)?.map((item) => (
+            <button
+              className={s.optionButton}
+              style={{ backgroundColor: "#FFFFFF" }}
+              onClick={() => setShowMenu(0)}
+            >
+              {item}
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );

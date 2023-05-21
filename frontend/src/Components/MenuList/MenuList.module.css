@@ -7,8 +7,7 @@
 }
 
 .menuItem {
-  padding: 12px 16px;
-  width: 156px;
+  padding: 12px 16px 16px;
   background-color: rgba(0, 0, 0, 0.29);
   backdrop-filter: blur(6px);
   border-radius: 20px;
@@ -16,10 +15,19 @@
   color: #fff;
 }
 
+.menuItem img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.menuItemLink {
+  width: 47%;
+}
+
 .menuItemTitle {
-  font-size: 18px;
-  font-weight: 300;
-  margin-bottom: 24px;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 15px;
 }
 
 .bottom {
