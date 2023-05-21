@@ -7,6 +7,12 @@
   z-index: 100;
 }
 
+.headerTopAuth {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
 .headerTop {
   display: flex;
   justify-content: flex-end;
@@ -15,7 +21,7 @@
 
 .headerButton {
   font-weight: 500;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .headerButton svg {
@@ -47,4 +53,10 @@
 .navLink:not(:last-child) {
   display: block;
   margin-right: 12px;
+}
+
+.repeatBtn {
+  font-size: 16px;
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.2);
 }

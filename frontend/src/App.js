@@ -8,6 +8,7 @@ import MenuList from "./Components/MenuList/MenuList";
 import coffeeImg from "./assets/img/coffeeImg.png";
 import CoffeeCard from "./Components/CoffeeCard/CoffeeCard";
 import Order from "./Components/Order/Order";
+import LoginForm from "./Components/LoginForm/LoginForm";
 
 const menuItemsMock = [
   { img: coffeeImg, title: "Капучино", price: 120, id: 1 },
@@ -28,6 +29,7 @@ const menuItemsMock = [
 
 function App() {
   const [isOrderOpen, setIsOrderOpen] = useState(false);
+  const [isAuthorized, setIsAuthorized] = useState(false);
 
   return (
     <Router>
@@ -37,7 +39,10 @@ function App() {
             path="/"
             element={
               <>
-                <Header />
+                <Header
+                  isAuthorized={isAuthorized}
+                  setIsOrderOpen={setIsOrderOpen}
+                />
                 <div className="wrapper">
                   <MainContent />
                   <MenuList menuItems={menuItemsMock} />
@@ -45,13 +50,17 @@ function App() {
                     className="orderButton"
                     onClick={() => setIsOrderOpen(true)}
                   >
-                    Ваш заказ
+                    Корзина
                   </button>
                 </div>
               </>
             }
           />
           <Route path="/item/:id" element={<CoffeeCard />} />
+          <Route
+            path="/login"
+            element={<LoginForm setIsAuthorized={setIsAuthorized} />}
+          />
         </Routes>
         <Order isOpen={isOrderOpen} setIsOrderOpen={setIsOrderOpen} />
       </div>

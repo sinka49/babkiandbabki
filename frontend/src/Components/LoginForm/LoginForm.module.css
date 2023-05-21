@@ -1,0 +1,51 @@
+.loginForm {
+  height: calc(100vh - 50px);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 100;
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+}
+
+.number {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.leftBtn {
+  position: absolute;
+  right: 16px;
+  padding: 0;
+  background-color: transparent;
+}
+
+.leftBtn svg {
+  width: 26px;
+  height: 26px;
+}
+
+.footer {
+  padding-bottom: 32px;
+}
+
+.footerBtn {
+  margin-top: 32px;
+  padding: 15px 0;
+  font-size: 18px;
+  width: 100%;
+  background-color: #B7B7B7;
+  justify-content: center;
+}
