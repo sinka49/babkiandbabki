@@ -1,0 +1,59 @@
+.cardWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  padding: 34px 16px 81px;
+}
+
+.img {
+  margin-bottom: 28px;
+}
+
+.title {
+  font-size: 30px;
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+
+.description {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+
+.buttons {
+  padding-top: 18px;
+  margin-bottom: 48px;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.optionButton {
+  background-color: #F0F0F0;
+  justify-content: center;
+  width: 45%;
+  color: #000;
+}
+
+.orderButton {
+  background-color: #FFD540;
+  color: #000;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.bottom {
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 14px;
+}

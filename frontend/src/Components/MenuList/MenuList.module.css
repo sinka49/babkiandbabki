@@ -21,3 +21,8 @@
   font-weight: 300;
   margin-bottom: 24px;
 }
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+}

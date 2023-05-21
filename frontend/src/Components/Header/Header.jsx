@@ -27,7 +27,7 @@ const Header = () => {
       </div>
       <nav className={s.navigation}>
         {optionsMock.map((item) => (
-          <Link to={item} key={optionsMock.indexOf(item)}>
+          <Link to={item} key={optionsMock.indexOf(item)} className={s.navLink}>
             <button className={s.navButton}>{item}</button>
           </Link>
         ))}

@@ -39,3 +39,8 @@
 .navButton:not(:last-child) {
   margin-right: 12px;
 }
+
+.navLink:not(:last-child) {
+  display: block;
+  margin-right: 12px;
+}
